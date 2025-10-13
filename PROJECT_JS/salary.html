@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salary</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: url(img/image.jpg), #0000006b;
+            margin: 0px;
+            background-size: cover;
+            background-position: right;
+            background-blend-mode: overlay;
+            background-attachment: fixed;
+            padding-top: 200px;
+        }
+        .input {
+            width: 100%;
+            margin: auto;
+            padding: 15px;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+        }
+        
+        .btn{
+            padding: 9px 17px;
+            border-radius: 14px;
+            border: none;
+            background-color: white;
+            color: rgb(104, 67, 251);
+            font-size: 17px;
+            cursor: pointer;
+        }
+        #grossSalary h1{
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="background: url(./bg.jpg);background-position: center;background-repeat: no-repeat;background-size: cover;height: 100vh;">
+        <form id="form"  style="text-align: center;border: 1px solid white;padding: 30px;width: 390px;transform: translate(-50%,-50%);position: relative;
+        top: 40%;left: 50%;">
+                <h1  style="color: aliceblue;">Gross Salary Calculator</h1>
+                <br/>
+                <br/>
+            <label for="basicSalary" style="color: aliceblue;font-size:18px;">basicSalary :</label>
+            <input type="number" id="basicSalary" placeholder="basicSalary"><br><br>
+
+            <label for="basicSalary"  style="color: aliceblue;font-size:18px;">HA :</label>
+            <input type="number" id="hra" placeholder="Enter your HRA%"><br><br>
+
+            <label for="basicSalary"  style="color: aliceblue;font-size:18px;">DA :</label>
+            <input type="number" id="da" placeholder="Enter your DA%"><br><br>
+
+            <label for="basicSalary" style="color: aliceblue;font-size:18px;">TA :</label>
+            <input type="number" id="ta" placeholder="Enter your TA%"><br><br>
+
+            <button type="submit" class="btn">Submit</button>
+            <br />
+              <div id="grossSalary"></div>
+        </form>
+
+      
+    </div>
+    <script src="./salary.js"></script>
+</body>
+
+</html>

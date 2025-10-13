@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ff5dec, #73ffc5,#73b7ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid #66a6ff;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .grade {
+            font-size: 26px;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .A {
+            color: #28a745;
+        }
+
+        .B {
+            color: #17a2b8;
+        }
+
+        .C {
+            color: #ffc107;
+        }
+
+        .D {
+            color: #fd7e14;
+        }
+
+        .E {
+            color: #dc3545;
+        }
+
+        .F {
+            color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>🎓 Grade Calculator</h2>
+        <p>Enter your marks (out of 100)</p>
+        <input type="number" id="marks" placeholder="Enter marks here">
+        <br>
+        <button onclick="calculateGrade()">Check Grade</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateGrade() {
+            let marks = document.getElementById("marks").value;
+            let result = document.getElementById("result");
+
+            if (marks === "" || isNaN(marks) || marks < 0 || marks > 100) {
+                result.innerHTML = "❌ Please enter valid marks between 0 and 100.";
+                result.style.color = "red";
+                return;
+            }
+            let grade = "";
+            let gradeClass = "";
+            if (marks >= 80) {
+                grade = "A";
+                gradeClass = "A";
+            } else if (marks >= 70) {
+                grade = "B";
+                gradeClass = "B";
+            } else if (marks >= 60) {
+                grade = "C";
+                gradeClass = "C";
+            } else if (marks >= 50) {
+                grade = "D";
+                gradeClass = "D";
+            } else if (marks >= 40) {
+                grade = "E";
+                gradeClass = "E";
+            } else {
+                grade = "F";
+                gradeClass = "F";
+            }
+            result.innerHTML = `Your Grade is: <span class="grade ${gradeClass}">${grade}</span>`;
+        }
+    </script>
+
+</body>
+
+</html>
