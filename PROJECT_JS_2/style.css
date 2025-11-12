@@ -111,3 +111,7 @@ button:hover {
     color: white;
     font-size: 17px;
 }
+input:invalid {
+    border-color: red;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+}
